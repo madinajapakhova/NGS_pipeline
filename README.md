@@ -1,2 +1,2 @@
 # NGS_pipeline
-Here we will provide our pipeline for processing NGS data
+We present our pipeline for processing NGS data, optimized for parallel execution on HPC systems.
