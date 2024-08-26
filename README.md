@@ -5,5 +5,5 @@ We present our pipeline for processing NGS data, optimized for parallel executio
 
 ## Tools 
 [**FastQC**](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) - a Java-based software that generates html reports evaluating the quality of FASTQ data.        
-[**MultiQC**](https://multiqc.info/) - aggregates analysis reports from multiple samples into a unified report
+[**MultiQC**](https://multiqc.info/) - aggregates analysis reports from multiple samples into a unified report       
 [To be filled]
