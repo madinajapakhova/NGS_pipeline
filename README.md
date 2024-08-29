@@ -20,8 +20,8 @@ We present our pipeline for processing NGS data, optimized for parallel executio
 [**DESeq2**](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) - for differential gene expression analysis   
 [**AcidGenomes**](https://github.com/acidgenomics/r-acidgenomes) - for working with annotated genomes        
 [**biomaRt**](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) - for retrieving gene annotations from different databases      
-[**BiocParallel**] - for parallelizing some of Bioconductor functionalities           
-[**EnhancedVolcano**] - for plotting results of gene expression analysis           
+[**BiocParallel**](https://bioconductor.org/packages/release/bioc/html/BiocParallel.html) - for parallelizing some of Bioconductor functionalities           
+[**EnhancedVolcano**](https://bioconductor.org/packages/release/bioc/html/EnhancedVolcano.html) - for plotting results of gene expression analysis           
 
 ### Other R packages      
 [**stringr**] - for working with strings     
