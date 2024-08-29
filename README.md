@@ -30,13 +30,13 @@ We present our pipeline for processing NGS data, optimized for parallel executio
 ### Singularity container    
 We will provide all tools exploited by the pipeline, including $R$ with all necessary packages, installed within a singularity container. Therefore, you can download the container and execute the pipeline with all functions within the container. To take advantage of the "all dependecies inside one box" idea, you need to have [**Singularity**](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) installed.  
 
-## Pipeline processes    
+## Pipeline steps    
 ![](https://github.com/madinajapakhova/NGS_pipeline/blob/main/pipeline_processes.png)   
 
 ## Parallelization and execution   
 
-### Main-child-pipeline design    
-All pipeline processes, except FastQC*, are executed independently per each sample in a parallel fashion on HPC. Parallelization is achieved via means of **main-child-pipeline** 3-script design. The **main** script runs the processe per a list of samples, the **child** script contains job description, i.e. how much memory to allocate, and the **pipeline** script is a script with one of the pipeline processes. **You only need to modify the *main* script** by providing the expected input, e.g. path to files.  The **main** script then calls the **child**, and the **child** then calls the **pipeline** process script (e.g. data curation). The **child** and **pipeline** scripts have to stay unaffected!   
+### Main-child-step design    
+All pipeline processes, except FastQC*, are executed independently per each sample in a parallel fashion on HPC. Parallelization is achieved via means of **main-child-step** 3-script design. The **main** script runs the processe per a list of samples, the **child** script contains job description, i.e. how much memory to allocate, and the **step** is a script with one of the pipeline steps. **You only need to modify the *main* script** by providing the expected input, e.g. path to files.  The **main** script then calls the **child**, and the **child** then calls the **step** process script (e.g. data curation). The **child** and **pipeline** scripts have to stay unaffected!   
 
 * Scripts using FastQC have to be used on their own - without the **main** and **child** scripts. The reason is that FastQC has a nice in-built support for independent parallel processing. It is simple and efficient, therefore the pipeline relies on the FastQC in-built parallelization. 
 
