@@ -22,12 +22,12 @@ All pipeline processes, except FastQC*, are executed independently per each samp
 &emsp;&emsp;&emsp;└── 2.1_GeneratingRefGenome.sh               
 &emsp;&emsp;&emsp;└── .           
 &emsp;&emsp;&emsp;└── .          
-&emsp;&emsp;├── child             
+&emsp;&emsp;├── **child**                   
 &emsp;&emsp;&emsp;├── child_1.2_DataCuration.sh          
 &emsp;&emsp;&emsp;├── child_2.1_GeneratingRefGenome.sh           
 &emsp;&emsp;&emsp;├── .          
 &emsp;&emsp;&emsp;├── .          
-&emsp;&emsp;├── main          
+&emsp;&emsp;├── **main**    
 &emsp;&emsp;&emsp;├── main_1.2_DataCuration.sh           
 &emsp;&emsp;&emsp;├── main_2.1_GeneratingRefGenome.sh        
 &emsp;&emsp;&emsp;├── .        
