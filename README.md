@@ -13,29 +13,29 @@ All pipeline processes, except FastQC*, are executed independently per each samp
 
 * Scripts using FastQC have to be used on their own - without the **main** and **child** scripts. The reason is that FastQC has a nice in-built support for independent parallel processing. It is simple and efficient, therefore the pipeline relies on the FastQC in-built parallelization. 
 
-<NGS_pipeline>
-└── <runfolder>
-    ├── scripts
-        ├── 1.1_QualityCheck_Raw.sh
-        └── 1.2_DataCuration.sh 
-        └── 1.3_QualityCheck_Curated.sh
-        └── 2.1_GeneratingRefGenome.sh
-        └── .
-        └── .
-    ├── child
-        ├── child_1.2_DataCuration.sh
-        ├── child_2.1_GeneratingRefGenome.sh
-        ├── .
-        ├── .
-    ├── main
-        ├── main_1.2_DataCuration.sh
-        ├── main_2.1_GeneratingRefGenome.sh
-        ├── .
-        ├── .
+<NGS_pipeline>         
+└── <runfolder>            
+    ├── scripts            
+        ├── 1.1_QualityCheck_Raw.sh            
+        └── 1.2_DataCuration.sh              
+        └── 1.3_QualityCheck_Curated.sh               
+        └── 2.1_GeneratingRefGenome.sh               
+        └── .           
+        └── .          
+    ├── child             
+        ├── child_1.2_DataCuration.sh          
+        ├── child_2.1_GeneratingRefGenome.sh           
+        ├── .          
+        ├── .          
+    ├── main          
+        ├── main_1.2_DataCuration.sh           
+        ├── main_2.1_GeneratingRefGenome.sh        
+        ├── .        
+        ├── .         
 
-For example, to implement data curation:
-  - provide input to **./main/main_1.2_DataCuration.sh**
-  - run **./main/main_1.2_DataCuration.sh**
+For example, to implement data curation:           
+  - provide input to **./main/main_1.2_DataCuration.sh**          
+  - run **./main/main_1.2_DataCuration.sh**      
         
 ## Tools 
 ### Bioinformatics software    
