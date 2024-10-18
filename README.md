@@ -14,24 +14,24 @@ All pipeline processes, except FastQC*, are executed independently per each samp
 * Scripts using FastQC have to be used on their own - without the **main** and **child** scripts. The reason is that FastQC has a nice in-built support for independent parallel processing. It is simple and efficient, therefore the pipeline relies on the FastQC in-built parallelization. 
 
 <NGS_pipeline>         
-&emsp<runfolder>            
-&emsp&emsp├── scripts            
-&emsp&emsp&emsp├── 1.1_QualityCheck_Raw.sh            
-&emsp&emsp&emsp└── 1.2_DataCuration.sh              
-&emsp&emsp&emsp└── 1.3_QualityCheck_Curated.sh               
-&emsp&emsp&emsp└── 2.1_GeneratingRefGenome.sh               
-&emsp&emsp&emsp└── .           
-&emsp&emsp&emsp└── .          
-&emsp&emsp├── child             
-&emsp&emsp&emsp├── child_1.2_DataCuration.sh          
-&emsp&emsp&emsp├── child_2.1_GeneratingRefGenome.sh           
-&emsp&emsp&emsp├── .          
-&emsp&emsp&emsp├── .          
-&emsp&emsp├── main          
-&emsp&emsp&emsp├── main_1.2_DataCuration.sh           
-&emsp&emsp&emsp├── main_2.1_GeneratingRefGenome.sh        
-&emsp&emsp&emsp├── .        
-&emsp&emsp&emsp├── .         
+&emsp;<runfolder>            
+&emsp;&emsp;├── scripts            
+&emsp;&emsp;&emsp;├── 1.1_QualityCheck_Raw.sh            
+&emsp;&emsp;&emsp;└── 1.2_DataCuration.sh              
+&emsp;&emsp;&emsp;└── 1.3_QualityCheck_Curated.sh               
+&emsp;&emsp;&emsp;└── 2.1_GeneratingRefGenome.sh               
+&emsp;&emsp;&emsp;└── .           
+&emsp;&emsp;&emsp;└── .          
+&emsp;&emsp;├── child             
+&emsp;&emsp;&emsp;├── child_1.2_DataCuration.sh          
+&emsp;&emsp;&emsp;├── child_2.1_GeneratingRefGenome.sh           
+&emsp;&emsp;&emsp;├── .          
+&emsp;&emsp;&emsp;├── .          
+&emsp;&emsp;├── main          
+&emsp;&emsp;&emsp;├── main_1.2_DataCuration.sh           
+&emsp;&emsp;&emsp;├── main_2.1_GeneratingRefGenome.sh        
+&emsp;&emsp;&emsp;├── .        
+&emsp;&emsp;&emsp;├── .         
 
 For example, to implement data curation:           
   - provide input to **./main/main_1.2_DataCuration.sh**          
