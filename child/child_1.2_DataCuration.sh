@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -A pipeline
 #SBATCH --job-name=child_1.2_DataCuration.sh # write a meaningful name
-#SBATCH --time=7-00:00:00 # 100 hours as an example
+#SBATCH --time=1-12:00:00 # dd-hh:mm:ss "1-12:00:00" means "one day and twelve hours"
 #SBATCH --output=.../logs/%x-%j.log 
 #SBATCH --error=.../%x-%j.err  
 #SBATCH --mem-per-cpu=5000  # set requested memory (in MB) 
