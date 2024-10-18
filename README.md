@@ -3,6 +3,40 @@ We present our pipeline for processing NGS data, optimized for parallel executio
 
 ![](https://github.com/madinajapakhova/NGS_pipeline/blob/main/workflow_overview.png)  
 
+## Pipeline steps    
+![](https://github.com/madinajapakhova/NGS_pipeline/blob/main/pipeline_processes.png)   
+
+## Parallelization and execution   
+
+### Main-child-step design    
+All pipeline processes, except FastQC*, are executed independently per each sample in a parallel fashion on HPC. Parallelization is achieved via means of **main-child-step** 3-script design. The **main** script runs the processe per a list of samples, the **child** script contains job description, i.e. how much memory to allocate, and the **step** is a script with one of the pipeline steps. **You only need to modify the *main* script** by providing the expected input, e.g. path to files.  The **main** script then calls the **child**, and the **child** then calls the **step** process script (e.g. data curation). The **child** and **pipeline** scripts have to stay unaffected!   
+
+* Scripts using FastQC have to be used on their own - without the **main** and **child** scripts. The reason is that FastQC has a nice in-built support for independent parallel processing. It is simple and efficient, therefore the pipeline relies on the FastQC in-built parallelization. 
+
+<NGS_pipeline>
+└── <runfolder>
+    ├── scripts
+        ├── 1.1_QualityCheck_Raw.sh
+        └── 1.2_DataCuration.sh 
+        └── 1.3_QualityCheck_Curated.sh
+        └── 2.1_GeneratingRefGenome.sh
+        └── .
+        └── .
+    ├── child
+        ├── child_1.2_DataCuration.sh
+        ├── child_2.1_GeneratingRefGenome.sh
+        ├── .
+        ├── .
+    ├── main
+        ├── main_1.2_DataCuration.sh
+        ├── main_2.1_GeneratingRefGenome.sh
+        ├── .
+        ├── .
+
+For example, to implement data curation:
+  - provide input to **./main/main_1.2_DataCuration.sh**
+  - run **./main/main_1.2_DataCuration.sh**
+        
 ## Tools 
 ### Bioinformatics software    
 [**FastQC**](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) - a Java-based software that generates html reports evaluating the quality of FASTQ data.        
@@ -30,15 +64,6 @@ We present our pipeline for processing NGS data, optimized for parallel executio
 ### Singularity container    
 We will provide all tools exploited by the pipeline, including $R$ with all necessary packages, installed within a singularity container. Therefore, you can download the container and execute the pipeline with all functions within the container. To take advantage of the "all dependecies inside one box" idea, you need to have [**Singularity**](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) installed.  
 
-## Pipeline steps    
-![](https://github.com/madinajapakhova/NGS_pipeline/blob/main/pipeline_processes.png)   
-
-## Parallelization and execution   
-
-### Main-child-step design    
-All pipeline processes, except FastQC*, are executed independently per each sample in a parallel fashion on HPC. Parallelization is achieved via means of **main-child-step** 3-script design. The **main** script runs the processe per a list of samples, the **child** script contains job description, i.e. how much memory to allocate, and the **step** is a script with one of the pipeline steps. **You only need to modify the *main* script** by providing the expected input, e.g. path to files.  The **main** script then calls the **child**, and the **child** then calls the **step** process script (e.g. data curation). The **child** and **pipeline** scripts have to stay unaffected!   
-
-* Scripts using FastQC have to be used on their own - without the **main** and **child** scripts. The reason is that FastQC has a nice in-built support for independent parallel processing. It is simple and efficient, therefore the pipeline relies on the FastQC in-built parallelization. 
 
 ### HPC   
 The pipeline is executed on Linux-based HPC via the [**Slurm workload manager**](https://slurm.schedmd.com/sbatch.html) to allocate jobs. Make sure your computing facility supports [Slurm](https://slurm.schedmd.com/sbatch.html).             
