@@ -16,7 +16,7 @@ All pipeline processes, except FastQC*, are executed independently per each samp
 <NGS_pipeline>         
 └── <runfolder>            
     ├── scripts            
-        ├── 1.1_QualityCheck_Raw.sh            
+            ├── 1.1_QualityCheck_Raw.sh            
         └── 1.2_DataCuration.sh              
         └── 1.3_QualityCheck_Curated.sh               
         └── 2.1_GeneratingRefGenome.sh               
