@@ -81,11 +81,11 @@ overhang=${11}
 if [ "$paired_end" = "Yes" ]; then 
 
     echo "Reads are paired-end"
-          
-        temp_folder=/username/${samplename}.temp
+                  
         if [ -d "$temp_folder" ]; then
             rm -r $temp_folder
-        fi    
+        fi  
+        temp_folder=/username/${samplename}.temp
         
         mkdir $analysis_dir/2_mapping_STAR/ -p
         mkdir $analysis_dir/2_mapping_STAR/2.2_Mapping/star_1pass/ -p
