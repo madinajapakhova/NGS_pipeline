@@ -61,8 +61,6 @@ For example, to implement data curation:
 [**stringr**](https://stringr.tidyverse.org/) - for working with strings     
 [**dplyr**](https://cran.r-project.org/web/packages/dplyr/index.html) - for managing dataframes       
 
-### Singularity container    
-We will provide all tools exploited by the pipeline, including $R$ with all necessary packages, installed within a singularity container. Therefore, you can download the container and execute the pipeline with all functions within the container. To take advantage of the "all dependecies inside one box" idea, you need to have [**Singularity**](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) installed.  
 
 
 ### HPC   
