@@ -6,12 +6,12 @@ We present our pipeline for processing NGS data, optimized for parallel executio
 ## Pipeline steps    
 ![](https://github.com/madinajapakhova/NGS_pipeline/blob/main/pipeline_processes.png)   
 
-## Parallelization and execution   
+## Distribution of samples on HPC   
 
 ### Main-child-step design    
-All pipeline processes, except FastQC*, are executed independently per each sample in a parallel fashion on HPC. Parallelization is achieved via means of **main-child-step** 3-script design. The **main** script runs the processe per a list of samples, the **child** script contains job description, i.e. how much memory to allocate, and the **step** is a script with one of the pipeline steps. **You only need to modify the *main* script** by providing the expected input, e.g. path to files.  The **main** script then calls the **child**, and the **child** then calls the **step** process script (e.g. data curation). The **child** and **pipeline** scripts have to stay unaffected!   
+Distribution of samples on HPC is achieved via means of **main-child-step** 3-script design. The **main** script runs the processe per a list of samples, the **child** script contains job description, and the **step** is a script with one of the pipeline steps. **One only needs to modify the *main* script** by providing the expected input, e.g. path to files.  The **main** script then calls the **child**, and the **child** then calls the **step** process script (e.g. data curation). The **child** and **pipeline** scripts have to stay **unaffected**!   
 
-* Scripts using FastQC have to be used on their own - without the **main** and **child** scripts. The reason is that FastQC has a nice in-built support for independent parallel processing. It is simple and efficient, therefore the pipeline relies on the FastQC in-built parallelization. 
+Scripts using FastQC have to be used on their own - without the **main** and **child** scripts. The reason is that FastQC has a nice in-built support for independent parallel processing. It is simple and efficient, therefore the pipeline relies on the FastQC in-built parallelization. 
 
 <NGS_pipeline>         
 &emsp;<runfolder>            
