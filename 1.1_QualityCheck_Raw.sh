@@ -55,20 +55,20 @@ set -e
 # ******************************************************************************
 #                           !USER PROVIDED HEADING!
 # ******************************************************************************
-analysis_dir=/group/bioinf_biomarkers_rna/madina/NGS_pipeline
+analysis_dir=.../analysis_folder/...
 
 # Input: path to .fastq files 
 # !filenames should not contain spaces!
 paired_end="Yes"  
 # Paired-end case: forward and reverse reads in separate subfolders - 'R1' and 'R2'
-fastQ_files_folder=/group/bioinf_biomarkers_rna/madina/ICGC/RNA
+fastQ_files_folder=.../raw_data_folder/...
 fastQ_files_R1=$fastQ_files_folder/R1
 fastQ_files_R2=$fastQ_files_folder/R2 
 sym_links="No"
 extension='*fastq.gz'
 
 # Path to container with softwares
-sw=/group/bioinf_biomarkers_rna/madina/NGS_pipeline/sw/FastQC
+sw=.../software_folder/...
 
 # For FastQC:
 threads=4 
