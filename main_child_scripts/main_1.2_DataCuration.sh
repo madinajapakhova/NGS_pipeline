@@ -5,11 +5,11 @@ set -e
 #   !USER-PROVIDED INPUT. LEAVE NONE EMPTY!
 # ******************************************************************************
 
-analysis_dir=.../analysis_directory_example
-folder_nextstep=.../raw_data_storage_example
+analysis_dir=.../analysis_folder/...
+folder_nextstep=.../raw_data_folder/...
 paired_end="Yes"  
-filename_list_exclude=.../raw_data_storage_example/exclude_list.txt 
-softwares=.../sw
+filename_list_exclude=.../raw_data_folder/exclude_list.txt 
+softwares=.../software_folder
 UMI_extraction="No"  
 UMI_pattern="None" 
 UMI_pattern2="None" 

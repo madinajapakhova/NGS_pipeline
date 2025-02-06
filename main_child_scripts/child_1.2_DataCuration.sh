@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -A pipeline
 #SBATCH --job-name=child_1.2_DataCuration.sh # write a meaningful name
-#SBATCH --time=7-00:00:00 # 100 hours as an example
+#SBATCH --time=12:00:00 # dd-hh:mm:ss
 #SBATCH --output=.../logs/%x-%j.log 
 #SBATCH --error=.../%x-%j.err  
 #SBATCH --mem-per-cpu=5000  # set requested memory (in MB) 
@@ -43,7 +43,7 @@ samplename=${21}
 
 echo 'Started'
 
-./Pipeline/1.2_DataCuration.sh $analysis_dir $folder_nextstep $paired_end $filename_list_exclude $softwares $UMI_extraction $UMI_pattern $UMI_pattern2 $umi_method $cut_adapters $trimming_software $adapter_fwd $adapter_rev $illumina_adapters_file_PE $illumina_adapters_file_SE $low_quality $remove_poly $threads $readname $filename_extention $samplename 
+./1.2_DataCuration.sh $analysis_dir $folder_nextstep $paired_end $filename_list_exclude $softwares $UMI_extraction $UMI_pattern $UMI_pattern2 $umi_method $cut_adapters $trimming_software $adapter_fwd $adapter_rev $illumina_adapters_file_PE $illumina_adapters_file_SE $low_quality $remove_poly $threads $readname $filename_extention $samplename 
 
 
 
