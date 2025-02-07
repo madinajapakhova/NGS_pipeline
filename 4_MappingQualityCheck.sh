@@ -50,9 +50,9 @@ set -e
 #                           !USER DEFINED HEADING!
 # ******************************************************************************
 # External shell arguments:
-analysis_dir=$1 #/group/bioinf/Data/Madina_test/pipeline/v1
-bam_files=$2 #$analysis_dir/Picard_processed/3.3_markDuplicates
-filename_extension=$3 #.bam
+analysis_dir=$1 
+bam_files=$2 
+filename_extension=$3
 samplename=$4 
 # ******************************************************************************
 # Constructing the filename
@@ -63,7 +63,7 @@ filename="${samplename}${filename_extension}"
 # QUALIMAP:
 # 1. unset user display before running qualimap: type "unset DISPLAY" in the terminal. To set it back to the local system: DISPLAY=:0.0
 # 2. make sure that folder with qualimap is appended to the PATH. Otherwise, qualimap command will not be found
-export PATH=/group/bioinf/Users/Madina/sw/qualimap_v2.2.1:$PATH
+export PATH=...software_folder/qualimap_v2.2.1:$PATH
 # ******************************************************************************
 
 # ******************************************************************************
