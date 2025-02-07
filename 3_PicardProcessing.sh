@@ -55,10 +55,10 @@ set -e
 
 # External shell arguments:
 # ******************************************************************************
-analysis_dir=$1 #/group/bioinf/Data/Madina_test/pipeline/v1/Human
+analysis_dir=$1 
 sam_files=$2
 filename_extention=$3 #.sam
-samplename=$4 #DNA1
+samplename=$4 
 # ******************************************************************************
 
 # Constructing the name of the file 
@@ -66,7 +66,7 @@ filename="${samplename}Aligned.out${filename_extention}"
 
 # Internal arguments:
 # ******************************************************************************
-sw=/group/bioinf/Users/Madina/sw/
+sw=.../software_folder/...
 memory=-Xmx30g
 # ******************************************************************************
 # ******************************************************************************
