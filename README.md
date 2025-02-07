@@ -1,10 +1,10 @@
 # NGS pipeline: [the repository is currently under development]
 We present our pipeline for processing NGS data, optimized for parallel execution on HPC systems. OS compatibility: Linux. 
 
-![](https://github.com/madinajapakhova/NGS_pipeline/blob/main/workflow_overview.png)  
+![](https://github.com/madinajapakhova/NGS_pipeline/blob/master/workflow_overview.png)  
 
 ## Pipeline steps    
-![](https://github.com/madinajapakhova/NGS_pipeline/blob/main/pipeline_processes.png)   
+![](https://github.com/madinajapakhova/NGS_pipeline/blob/master/pipeline_processes.png)   
 
 ## Distribution of samples on HPC   
 
