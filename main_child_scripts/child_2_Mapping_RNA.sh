@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -A pipeline
 #SBATCH --job-name=2_child_Mapping # write a meaningful name
-#SBATCH --time=2-00:00:00 # 100 hours as an example
+#SBATCH --time=2-00:00:00 # dd-hh:mm:ss
 #SBATCH --output=.../logs/%x-%j.log 
 #SBATCH --error=.../%x-%j.err 
 #SBATCH --mem-per-cpu=300000  # set requested memory (in MB) 
@@ -34,7 +34,7 @@ overhang=${11}
 
 echo 'Started'
 
-./Pipeline/2_Mapping_RNA.sh $analysis_dir $processed_files $paired_end $filename_extention $samplename $readname $genomeDir $reference_genome38 $reference_gtf $threads $overhang
+./2_Mapping_RNA.sh $analysis_dir $processed_files $paired_end $filename_extention $samplename $readname $genomeDir $reference_genome38 $reference_gtf $threads $overhang
 
 echo "Finished at `date`"
 echo "__DONE__"
