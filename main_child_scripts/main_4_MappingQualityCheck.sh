@@ -1,16 +1,16 @@
 #!/bin/bash
-analysis_dir=/group/bioinf/Users/Madina/pipeline_tested/human
-bam_files=/group/bioinf/Users/Madina/pipeline_tested/human/3_Picard_processed/3.3_markDuplicates
+analysis_dir=.../analysis_folder/...
+bam_files=$analysis_dir/3_Picard_processed/3.3_markDuplicates
 filename_extention=.bam
 
 echo 'Started'
 
-#chmod u+x /group/bioinf/Data/Madina_test/pipeline/child_III_Picard.sh
+#chmod u+x ./main_child_scripts/child_3_Picard.sh (if not done yet)
 
-#!/bin/bash
+# if you need to create a text file with samplename per line:
+#find $bam_files -type f -name "*.bam" -exec basename {} \; | sed 's/\.[^.]*$//' > $bam_files/bam_files.txt
 
-find $bam_files -type f -name "*.bam" -exec basename {} \; | sed 's/\.[^.]*$//' > $bam_files/bam_files.txt
-# Loop over each line in samplenames.txt
+# Loop over each line in bam_files.txt
 for s in $(cat $bam_files/bam_files.txt)
     do
         samplename="$s"
