@@ -28,7 +28,7 @@ temp_folder=$5
                            
 echo 'Started'
 
-./Pipeline/2.1_GeneratingRefGenome.sh $analysis_dir $threads $reference_genome38 $reference_gtf $temp_folder 
+./2.1_GeneratingRefGenome.sh $analysis_dir $threads $reference_genome38 $reference_gtf $temp_folder 
 
 
 

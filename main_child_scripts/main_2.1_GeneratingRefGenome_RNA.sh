@@ -4,7 +4,7 @@ set -e
 # ******************************************************************************
 #   !USER-PROVIDED INPUT. LEAVE NONE EMPTY!
 # ******************************************************************************
-analysis_dir=.../analysis_directory_example
+analysis_dir=.../analysis_folder/...
 threads=4
 reference_genome38=.../resources_broad_hg38_v0_Homo_sapiens_assembly38.fasta 
 reference_gtf=.../gencode.v38.annotation.gtf 
