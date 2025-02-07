@@ -51,16 +51,16 @@ set -e
 
 # External shell arguments:
 # ******************************************************************************
-analysis_dir=$1 #/group/bioinf/Data/Madina_test/pipeline/v1 main analysis folder where all performed  steps of the pipeline are saved
-chrom=$2 # list of chromosomes. chr 1 - chr 22 and chr X
+analysis_dir=$1 
+chrom=$2 
 # ******************************************************************************
 # Internal arguments:
 # *******************************************************************************
-reference_genome38=/group/bioinf/Data/Madina_test/pipeline/v1/Human/reference_genome/GATK_bundle/hg38/resources_broad_hg38_v0_Homo_sapiens_assembly38.fasta
+reference_genome38=.../reference_resources/resources_broad_hg38_v0_Homo_sapiens_assembly38.fasta
 memory=-Xmx30g 
 ploidy=2 
-sw=/group/bioinf/Users/Madina/sw/
-softwares_GATK=/group/bioinf/Users/Madina/sw/gatk-4.2.5.0/gatk-package-4.2.5.0-local.jar # path to GATK .jar file
+sw=.../software_folder/...
+softwares_GATK=$sw/gatk-4.2.5.0/gatk-package-4.2.5.0-local.jar # path to GATK .jar file
 # ******************************************************************************
 # ******************************************************************************
 # ******************************************************************************

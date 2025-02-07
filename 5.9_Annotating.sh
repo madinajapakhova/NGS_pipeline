@@ -29,10 +29,10 @@ fi
 
 # Internal arguments:
 # *******************************************************************************
-reference_genome38=/group/bioinf/Data/Madina_test/pipeline/v1/Human/reference_genome/GATK_bundle/hg38/resources_broad_hg38_v0_Homo_sapiens_assembly38.fasta
+reference_genome38=.../reference_resources/resources_broad_hg38_v0_Homo_sapiens_assembly38.fasta
 memory=-Xmx30g 
-softwares_GATK=/group/bioinf/Users/Madina/sw/gatk-4.2.5.0/gatk-package-4.2.5.0-local.jar # path to GATK .jar file
-data_sources=/group/bioinf_biomarkers_rna/rna_us_analysis/funcotator_dataSources.v1.7.20200521g
+softwares_GATK=.../software_folder/gatk-4.2.5.0/gatk-package-4.2.5.0-local.jar # path to GATK .jar file
+data_sources=.../funcotator_resources/funcotator_dataSources.v1.7.20200521g
 # ******************************************************************************
 # ******************************************************************************
 

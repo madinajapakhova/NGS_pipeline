@@ -1,14 +1,10 @@
 #!/bin/bash
 set -e
-analysis_dir=/group/bioinf_biomarkers_rna/rna_us_analysis 
-bam_files=/group/bioinf_biomarkers_rna/rna_us_analysis/3_Picard_processed/3.3_markDuplicates                                        
+analysis_dir=.../analysis_folder/... 
+bam_files=$analysis_dir/3_Picard_processed/3.3_markDuplicates                                        
 filename_extention=.bam
 
 echo 'Started'
-
-#chmod u+x /group/bioinf/Data/Madina_test/pipeline/child_GATK_ecoli.sh
-
-#!/bin/bash
 
 # Loop over each line in samplenames.txt
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-analysis_dir=/group/bioinf_biomarkers_rna/rna_us_analysis
+analysis_dir=.../analysis_folder/...
 
 echo "Started at `date`"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-analysis_dir=/group/bioinf/Users/Madina/pipeline_tested/human
+analysis_dir=.../analysis_folder/...
 
 echo "Started at `date`"
 for c in $(cat $analysis_dir/chromosomes.txt) 

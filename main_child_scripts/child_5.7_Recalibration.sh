@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH -A pipeline
 #SBATCH --job-name=5.7_Recalibration # write a meaningful name
-#SBATCH --time=12:00:00 # 100 hours as an example
-#SBATCH --output=/home/bioinf/maja488d/logs/%x-%j.log # just write your zih name instead of sxxxxx, and keep the rest as they are 
-#SBATCH --error=/home/bioinf/maja488d/logs/%x-%j.err  # just write your zih name instead of sxxxxx,  and keep the rest as they are 
+#SBATCH --time=12:00:00 # dd-hh:mm:ss
+#SBATCH --output=.../logs/%x-%j.log # just write your zih name instead of sxxxxx, and keep the rest as they are 
+#SBATCH --error=.../logs/%x-%j.err  # just write your zih name instead of sxxxxx,  and keep the rest as they are 
 #SBATCH --mem-per-cpu=200000 # set requested memory (in MB) 
 #SBATCH --ntasks=1 # leave this for now
 #SBATCH --nodes=1 # leave this for n
 #SBATCH --cpus-per-task=1 # number of the request cpu if you have parallel processing
-#SBATCH --mail-user madina.japakhova@mailbox.tu-dresden.de	### tell the batch system your email address to get updates about the jobs status
+#SBATCH --mail-user example@whatever.de	### tell the batch system your email address to get updates about the jobs status
 #SBATCH --mail-type=FAIL ### specify for what type of events you want to get a mail; valid options beside ALL are: BEGIN, END, FAIL, REQUEUE 
 
 
@@ -27,7 +27,7 @@ analysis_dir=$1
 
 echo 'Started'
 
-./Pipeline/5.7_VQSR.sh $analysis_dir  
+./5.7_VQSR.sh $analysis_dir  
 
 
 echo "Finished at `date`"

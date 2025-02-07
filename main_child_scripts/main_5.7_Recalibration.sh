@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-analysis_dir=/group/bioinf/Users/Madina/pipeline_tested/human
+analysis_dir=.../analysis_dir/...
 
 echo "Started at `date`"
 

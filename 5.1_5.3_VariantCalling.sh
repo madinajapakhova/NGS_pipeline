@@ -61,22 +61,22 @@ set -e
 # ******************************************************************************
 # External shell arguments:
 # ******************************************************************************
-analysis_dir=$1 #/group/bioinf/Data/Madina_test/pipeline/v1/Human main analysis folder where all performed  steps of the pipeline are saved
-bam_files=$2 # /group/bioinf/Data/Madina_test/pipeline/v1/Human/Picard_processed/3.3_markDuplicates/                                          
-filename_extention=$3 # .bam
-samplename=$4 # name of the sample, e.g. DNA1
+analysis_dir=$1 
+bam_files=$2                                           
+filename_extention=$3 # 
+samplename=$4 
 # ******************************************************************************
 filename="${samplename}${filename_extention}" 
 
 # Internal arguments:
 # *******************************************************************************
-reference_genome38=/group/bioinf/Data/Madina_test/pipeline/v1/Human/reference_genome/GATK_bundle/hg38/resources_broad_hg38_v0_Homo_sapiens_assembly38.fasta
-known_dbsnp=/group/bioinf/Data/Madina_test/pipeline/v1/Human/reference_genome/GATK_bundle/hg38/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 
-known_indels=/group/bioinf/Data/Madina_test/pipeline/v1/Human/reference_genome/GATK_bundle/hg38/resources_broad_hg38_v0_Homo_sapiens_assembly38.known_indels.vcf.gz
-known_mills=/group/bioinf/Data/Madina_test/pipeline/v1/Human/reference_genome/GATK_bundle/hg38/resources_broad_hg38_v0_Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
+reference_genome38=.../reference_resources/resources_broad_hg38_v0_Homo_sapiens_assembly38.fasta
+known_dbsnp=.../reference_resources/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 
+known_indels=.../reference_resources/hg38/resources_broad_hg38_v0_Homo_sapiens_assembly38.known_indels.vcf.gz
+known_mills=.../reference_resources/resources_broad_hg38_v0_Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
 memory=-Xmx30g 
 ploidy=2 
-softwares_GATK=/group/bioinf/Users/Madina/sw/gatk-4.2.5.0/gatk-package-4.2.5.0-local.jar # path to GATK .jar file
+softwares_GATK=../software_folder/gatk-4.2.5.0/gatk-package-4.2.5.0-local.jar # path to GATK .jar file
 # ******************************************************************************
 # ******************************************************************************
 # ******************************************************************************
