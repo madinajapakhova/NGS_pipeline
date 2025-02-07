@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-analysis_dir=.../analysis_directory_example
+analysis_dir=.../analysis_folder/...
 processed_files=$analysis_dir/curated_data_directory                                      
 paired_end="Yes" 
 filename_extention=_001.fastq.gz 
@@ -29,8 +29,8 @@ for param in "${params[@]}"; do
 done
 
 # ******************************************************************************
-# Activate the child script
-# chmod u+x ./child/child_1.2_DataCuration.sh
+# Activate the child script (if not done yet)
+# chmod u+x ./main_child_scripts/child_1.2_DataCuration.sh
 # ******************************************************************************
 
 # this can help you create file with samplenames. 
