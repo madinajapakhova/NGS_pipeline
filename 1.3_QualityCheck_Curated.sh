@@ -53,11 +53,11 @@ set -e
 #                           !USER PROVIDED HEADING!
 # ******************************************************************************
 
-analysis_dir=/group/bioinf/Users/Madina/pipeline_tested/human
+analysis_dir=.../analysis_folder/...
 
 threads=1 # For FastQC: -t threads Specifies the number of files which can be processed simultaneously.  Each thread will be allocated 250MB of memory so you shouldn't run more threads than your available memory will cope with, and not more than 6 threads on a 32 bit machine
 
-paired_end="No" # set to "Yes" if you want to additionally compare the quality of forward and reverse reads. Applies to paired-end data
+paired_end="Yes" # set to "Yes" if you want to additionally compare the quality of forward and reverse reads. Applies to paired-end data
 
 # Input: curated .fastq.gz files. See from step 1.2: "Data curation complete. Files can be found in /group/bioinf/Data/Madina_test/pipeline/v1/1_Preprocessing/1.2_CuratedData/1.2_RemovePoly"
 fastQ_files_folder=$analysis_dir/1_Preprocessing/1.2_CuratedData/1.2_Quality_trimmed
